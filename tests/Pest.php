@@ -23,9 +23,9 @@ function getContainer() : Container
     $container['tpl'] = new class implements TemplateInterface {
         use TemplateTrait;
 
-        public $page_uri;
-        public $url_page;
-        public $url_domain;
+        public string $page_uri;
+        public string $url_page;
+        public string $url_domain;
 
         public function setTemplate(string $tpl_name)
         {
