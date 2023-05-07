@@ -1,0 +1,21 @@
+*~
+*/.env
+.DS_Store
+.idea
+.php_cs.cache
+.php-cs-fixer.cache
+.svn
+.cvs
+*.bak
+*.swp
+Thumbs.db
+debug.log
+vendor
+composer.lock
+.smushit-status
+.gitattributes
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
