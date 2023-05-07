@@ -3,6 +3,7 @@
  * The Engine of our system
  *
  * @author Wasseem Khayrattee <hey@wk.contact>
+ *
  * @github @wkhayrattee
  */
 
@@ -93,7 +94,7 @@ class Engine implements HttpKernelInterface
     /**
      * @throws Exception
      */
-    public function start()
+    public function start(): void
     {
         //Start the engine now
         $appCached = new HttpCache($this, new Store($this->container['config']['folder.cache'] . 'httpcache'));
@@ -104,7 +105,7 @@ class Engine implements HttpKernelInterface
     /**
      * @throws Exception
      */
-    public static function deflateEnvFile()
+    public static function deflateEnvFile(): void
     {
         if (!defined('APP_FOLDER')) {
             throw new Exception('Grogu: constant APP_FOLDER is not defined');
@@ -131,7 +132,7 @@ class Engine implements HttpKernelInterface
     /**
      * @throws Exception
      */
-    public static function initDefines()
+    public static function initDefines(): void
     {
         if (!defined('APP_FOLDER')) {
             throw new Exception('Grogu: constant APP_FOLDER is not defined');
