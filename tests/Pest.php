@@ -1,13 +1,14 @@
 <?php
+
+use FastRoute\Dispatcher\GroupCountBased;
+use FastRoute\RouteCollector;
 use Groguphp\TemplateInterface;
 use Groguphp\TemplateTrait;
 use Pimple\Container;
 use Symfony\Component\HttpFoundation\Request;
-use FastRoute\RouteCollector;
-use FastRoute\Dispatcher\GroupCountBased;
 use Symfony\Component\HttpFoundation\Response;
 
-function getContainer() : Container
+function getContainer(): Container
 {
     $container = new Container();
     $container['request'] = Request::createFromGlobals();
@@ -102,6 +103,7 @@ class MockUserController
     public function __invoke(): Response
     {
         $userId = $this->url_bag['id'];
+
         return new Response("User ID: {$userId}", 200);
     }
 }
